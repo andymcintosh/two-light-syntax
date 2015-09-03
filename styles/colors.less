@@ -1,0 +1,51 @@
+
+// Settings -----------------------------------
+
+@theme-color:             hsl(195, 100%, 45%);
+@theme-adjust-saturation: 0%; // -/+n%
+@theme-adjust-contrast:   0%;
+
+
+// Config -----------------------------------
+
+@syntax-hue:          hsvhue(@theme-color);
+@syntax-hue-accent:   @syntax-hue;
+@syntax-saturation:   0%; //max(2% + @theme-adjust-saturation, 0% ); // limit to > 100%;
+@syntax-brightness:   100%;
+@syntax-contrast:     @theme-adjust-contrast * -0.1;
+
+
+// Base colors -----------------------------------
+
+@syntax-accent-color: hsl(@syntax-hue-accent, @theme-adjust-saturation + 90%, (@syntax-brightness + (@syntax-contrast*10) - 40%) );
+@syntax-base-color:   hsl(@syntax-hue, @syntax-saturation, @syntax-brightness + (@syntax-contrast*-2) );
+
+@syntax-text:         @dark-gray;
+@syntax-guide-color:  fade(@syntax-text, 10%);
+
+
+
+// Colors: Mix Base16 Atelier Dune with Theme hue -----------------------------------
+
+@syntax-mix-saturation: 0% + @theme-adjust-saturation;
+@syntax-mix-contrast:   10% + (@theme-adjust-contrast * .5 );
+
+// Grayscale
+@black:           #000; // 00
+@light-black:     #222; // 01
+@very-dark-gray:  #1d1f21;; // 02
+@dark-gray:       #282a2e; // 03
+@gray:            #373b41;; // 04
+@light-gray:      #8a9899; // 05
+@very-light-gray: #edf5f7; // 06
+@white:           #fff; // 07
+
+// Colors
+@red:             #cc6666; // 08
+@orange:          #df5000; // 09
+@light-orange:    #de9b00; // 0A
+@green:           #9da63a; // 0B
+@cyan:            #0086B3; // 0C
+@blue:            #005572; // 0D
+@purple:          #945277; // 0E
+@dark-red:        #cc6666; // 0F
